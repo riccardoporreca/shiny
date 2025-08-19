@@ -1237,6 +1237,7 @@ uiOutput <- htmlOutput
 #' @param label The label that should appear on the button.
 #' @param class Additional CSS classes to apply to the tag, if any.
 #' @param icon An [icon()] to appear on the button. Default is `icon("download")`.
+#' @param disabled If `TRUE`, the button will not be clickable.
 #' @param ... Other arguments to pass to the container tag function.
 #'
 #' @examples
@@ -1275,9 +1276,15 @@ downloadButton <- function(outputId,
                            label="Download",
                            class=NULL,
                            ...,
-                           icon = shiny::icon("download")) {
+                           icon = shiny::icon("download"),
+                           disabled = FALSE) {
+  disabled_class <- if (isTRUE(disabled)) {
+    'disabled'
+  } else {
+    c('disabled', 'shiny-render-enable')
+  }
   tags$a(id=outputId,
-         class='btn btn-default shiny-download-link disabled',
+         class=paste('btn btn-default shiny-download-link', disabled_class),
          class=class,
          href='',
          target='_blank',
@@ -1290,9 +1297,14 @@ downloadButton <- function(outputId,
 
 #' @rdname downloadButton
 #' @export
-downloadLink <- function(outputId, label="Download", class=NULL, ...) {
+downloadLink <- function(outputId, label="Download", class=NULL, ..., disabled=FALSE) {
+  disabled_class <- if (isTRUE(disabled)) {
+    'disabled'
+  } else {
+    c('disabled', 'shiny-render-enable')
+  }
   tags$a(id=outputId,
-         class='shiny-download-link disabled',
+         class=paste('shiny-download-link', disabled_class),
          class=class,
          href='',
          target='_blank',

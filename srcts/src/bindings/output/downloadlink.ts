@@ -8,9 +8,12 @@ class DownloadLinkOutputBinding extends OutputBinding {
   }
   renderValue(el: HTMLElement, data: string): void {
     el.setAttribute("href", data);
-    el.classList.remove("disabled");
-    el.removeAttribute("aria-disabled");
-    el.removeAttribute("tabindex");
+    if (el.hasClass("shiny-render-enable")) {
+      el.classList.remove("shiny-render-enable");
+      el.classList.remove("disabled");
+      el.removeAttribute("aria-disabled");
+      el.removeAttribute("tabindex");
+    }
   }
   // Progress shouldn't be shown on the download button
   // (progress will be shown as a page level pulse instead)
