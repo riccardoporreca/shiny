@@ -1273,45 +1273,51 @@ uiOutput <- htmlOutput
 #' @seealso [downloadHandler()]
 #' @export
 downloadButton <- function(outputId,
-                           label="Download",
-                           class=NULL,
+                           label = "Download",
+                           class = NULL,
                            ...,
                            icon = shiny::icon("download"),
                            disabled = FALSE) {
   disabled_class <- if (isTRUE(disabled)) {
-    'disabled'
+    "disabled"
   } else {
-    c('disabled', 'shiny-render-enable')
+    c("disabled", "shiny-render-enable")
   }
-  tags$a(id=outputId,
-         class=paste('btn btn-default shiny-download-link', disabled_class),
-         class=class,
-         href='',
-         target='_blank',
-         download=NA,
-         "aria-disabled"="true",
-         tabindex="-1",
+  tags$a(id = outputId,
+         class = paste("btn btn-default shiny-download-link", disabled_class),
+         class = class,
+         href = "",
+         target = "_blank",
+         download = NA,
+         "aria-disabled" = "true",
+         tabindex ="-1",
          validateIcon(icon),
-         label, ...)
+         label,
+         ...)
 }
 
 #' @rdname downloadButton
 #' @export
-downloadLink <- function(outputId, label="Download", class=NULL, ..., disabled=FALSE) {
+downloadLink <- function(outputId,
+                         label = "Download",
+                         class = NULL,
+                         ...,
+                         disabled = FALSE) {
   disabled_class <- if (isTRUE(disabled)) {
-    'disabled'
+    "disabled"
   } else {
-    c('disabled', 'shiny-render-enable')
+    c("disabled", "shiny-render-enable")
   }
-  tags$a(id=outputId,
-         class=paste('shiny-download-link', disabled_class),
-         class=class,
-         href='',
-         target='_blank',
-         download=NA,
-         "aria-disabled"="true",
-         tabindex="-1",
-         label, ...)
+  tags$a(id = outputId,
+         class = paste("shiny-download-link", disabled_class),
+         class = class,
+         href = "",
+         target = "_blank",
+         download = NA,
+         "aria-disabled" = "true",
+         tabindex = "-1",
+         label,
+         ...)
 }
 
 
