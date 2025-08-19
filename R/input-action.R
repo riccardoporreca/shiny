@@ -7,8 +7,8 @@
 #' @param label The contents of the button or link--usually a text label, but
 #'   you could also use any other HTML, like an image.
 #' @param icon An optional [icon()] to appear on the button.
-#' @param disabled If `TRUE`, the button will not be clickable. Use
-#'   [updateActionButton()] to dynamically enable/disable the button.
+#' @param disabled If `TRUE`, the button or link will not be clickable. Use
+#'   [updateActionButton()] or [updateActionLink()] to dynamically enable/disable.
 #' @param ... Named attributes to be applied to the button or link.
 #'
 #' @family input elements

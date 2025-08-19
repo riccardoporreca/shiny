@@ -1234,10 +1234,11 @@ uiOutput <- htmlOutput
 #'
 #' @param outputId The name of the output slot that the `downloadHandler`
 #'   is assigned to.
-#' @param label The label that should appear on the button.
+#' @param label The contents of the button or link--usually a text label, but
+#'   you could also use any other HTML, like an image.
 #' @param class Additional CSS classes to apply to the tag, if any.
 #' @param icon An [icon()] to appear on the button. Default is `icon("download")`.
-#' @param disabled If `TRUE`, the button will not be clickable.
+#' @param disabled If `TRUE`, the button or link will not be clickable.
 #' @param ... Other arguments to pass to the container tag function.
 #'
 #' @examples

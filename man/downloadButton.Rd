@@ -20,7 +20,8 @@ downloadLink(outputId, label = "Download", class = NULL, ..., disabled = FALSE)
 \item{outputId}{The name of the output slot that the \code{downloadHandler}
 is assigned to.}
 
-\item{label}{The label that should appear on the button.}
+\item{label}{The contents of the button or link--usually a text label, but
+you could also use any other HTML, like an image.}
 
 \item{class}{Additional CSS classes to apply to the tag, if any.}
 
@@ -28,7 +29,7 @@ is assigned to.}
 
 \item{icon}{An \code{\link[=icon]{icon()}} to appear on the button. Default is \code{icon("download")}.}
 
-\item{disabled}{If \code{TRUE}, the button will not be clickable.}
+\item{disabled}{If \code{TRUE}, the button or link will not be clickable.}
 }
 \description{
 Use these functions to create a download button or link; when clicked, it

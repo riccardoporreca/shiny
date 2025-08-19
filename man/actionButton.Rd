@@ -20,8 +20,8 @@ you could also use any other HTML, like an image.}
 \item{width}{The width of the input, e.g. \code{'400px'}, or \code{'100\%'};
 see \code{\link[=validateCssUnit]{validateCssUnit()}}.}
 
-\item{disabled}{If \code{TRUE}, the button will not be clickable. Use
-\code{\link[=updateActionButton]{updateActionButton()}} to dynamically enable/disable the button.}
+\item{disabled}{If \code{TRUE}, the button or link will not be clickable. Use
+\code{\link[=updateActionButton]{updateActionButton()}} or \code{\link[=updateActionLink]{updateActionLink()}} to dynamically enable/disable.}
 
 \item{...}{Named attributes to be applied to the button or link.}
 }
